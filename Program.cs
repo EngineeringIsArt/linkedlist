@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace linkedlist
 {
@@ -12,6 +13,9 @@ namespace linkedlist
             Node.PrintList(head);
 
             head = Node.Reverse(head);
+            Node.PrintList(head);
+
+            head = Node.ReverseUsingStack(head);
             Node.PrintList(head);
         }
     }
@@ -44,6 +48,32 @@ namespace linkedlist
             }
 
             return previous;
+        }
+
+        public static Node ReverseUsingStack(Node head)
+        {
+            var stack = new Stack<Node>();
+            var cursor = head;
+
+            while (cursor != null)
+            {
+                stack.Push(cursor);
+                cursor = cursor.Next;
+            }
+
+            head = stack.Pop();
+            cursor = head;
+
+            do
+            {
+                cursor.Next = stack.Peek();
+                cursor = stack.Pop();
+            }
+            while (stack.Count > 0);
+
+            cursor.Next = null;
+
+            return head;
         }
 
         public static void PrintList(Node node)
