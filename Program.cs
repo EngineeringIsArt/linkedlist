@@ -29,18 +29,18 @@ namespace linkedlist
         public static Node Reverse(Node head)
         {
             Node previous = null;
-            Node following = head;
-            Node key = null;
+            Node cursor = head;
+            Node following = null;
 
-            while (following != null)
+            while (cursor != null)
             {
                 // Store node ahead of following.
-                key = following.Next;
+                following = cursor.Next;
                 // Point following node's link to previous node.
-                following.Next = previous;
+                cursor.Next = previous;
                 // Move cursor ahead
-                previous = following;
-                following = key;
+                previous = cursor;
+                cursor = following;
             }
 
             return previous;
