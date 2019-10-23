@@ -28,9 +28,9 @@ namespace linkedlist
 
         public static Node Reverse(Node head)
         {
-            Node previous = null;
+            Node previous = null; // Seed null to change first node to last node.
             Node cursor = head;
-            Node following = null;
+            Node following;
 
             while (cursor != null)
             {
