@@ -11,10 +11,10 @@ class Node<T>
     public T Value { get; set; }
     public Node<T> Next { get; set; }
 
-    public static Node<T> Reverse(Node<T> head)
+    public Node<T> Reverse()
     {
         Node<T> previous = null; // Seed null to change first node to last node.
-        Node<T> cursor = head;
+        Node<T> cursor = this;
         Node<T> following;
 
         while (cursor != null)
@@ -31,9 +31,10 @@ class Node<T>
         return previous;
     }
 
-    public static Node<T> ReverseUsingStack(Node<T> head)
+    public Node<T> ReverseUsingStack()
     {
         var stack = new Stack<Node<T>>();
+        var head = this;
         var cursor = head;
 
         while (cursor != null)
@@ -55,8 +56,9 @@ class Node<T>
         return head;
     }
 
-    public static void PrintList(Node<T> node)
+    public void PrintList()
     {
+        var node = this;
         while (node != null)
         {
             Console.Write($"{node.Value} -> ");

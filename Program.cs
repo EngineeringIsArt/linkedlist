@@ -7,13 +7,13 @@
             var head = new Node<int>(1);
             head.Next = new Node<int>(2);
             head.Next.Next = new Node<int>(3);
-            Node<int>.PrintList(head);
+            head.PrintList();
 
-            head = Node<int>.Reverse(head);
-            Node<int>.PrintList(head);
+            head = head.Reverse();
+            head.PrintList();
 
-            head = Node<int>.ReverseUsingStack(head);
-            Node<int>.PrintList(head);
+            head = head.ReverseUsingStack();
+            head.PrintList();
         }
     }
 
