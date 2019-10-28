@@ -21,7 +21,7 @@ class Node
         {
             // Store node ahead of following.
             following = cursor.Next;
-            // Point following node's link to previous node.
+            // Point current node's link to previous node.
             cursor.Next = previous;
             // Move cursor ahead
             previous = cursor;
