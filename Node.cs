@@ -44,14 +44,12 @@ class Node
 
         head = stack.Pop();
         cursor = head;
-
         do
         {
             cursor.Next = stack.Peek();
             cursor = stack.Pop();
         }
         while (stack.Count > 0);
-
         cursor.Next = null;
 
         return head;
