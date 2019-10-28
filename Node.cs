@@ -1,21 +1,21 @@
 using System;
 using System.Collections.Generic;
 
-class Node
+class Node<T>
 {
-    public Node(int value)
+    public Node(T value)
     {
         Value = value;
     }
 
-    public int Value { get; set; }
-    public Node Next { get; set; }
+    public T Value { get; set; }
+    public Node<T> Next { get; set; }
 
-    public static Node Reverse(Node head)
+    public static Node<T> Reverse(Node<T> head)
     {
-        Node previous = null; // Seed null to change first node to last node.
-        Node cursor = head;
-        Node following;
+        Node<T> previous = null; // Seed null to change first node to last node.
+        Node<T> cursor = head;
+        Node<T> following;
 
         while (cursor != null)
         {
@@ -31,9 +31,9 @@ class Node
         return previous;
     }
 
-    public static Node ReverseUsingStack(Node head)
+    public static Node<T> ReverseUsingStack(Node<T> head)
     {
-        var stack = new Stack<Node>();
+        var stack = new Stack<Node<T>>();
         var cursor = head;
 
         while (cursor != null)
@@ -55,7 +55,7 @@ class Node
         return head;
     }
 
-    public static void PrintList(Node node)
+    public static void PrintList(Node<T> node)
     {
         while (node != null)
         {
