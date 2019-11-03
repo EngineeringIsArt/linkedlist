@@ -7,7 +7,8 @@ namespace linkedlist
         static void Main(string[] args)
         {
             //ListStuff();
-            StackStuff();
+            //StackStuff();
+            QueueStuff();
         }
 
         static void ListStuff()
@@ -50,6 +51,20 @@ namespace linkedlist
             Console.WriteLine(stack.Pop());
             Console.WriteLine(stack.Pop());
             Console.WriteLine(stack.Pop());
+        }
+        
+        static void QueueStuff()
+        {
+            var queue = new Queue<int>();
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+            Console.WriteLine(queue.Dequeue());
+            Console.WriteLine(queue.Dequeue());
+            Console.WriteLine(queue.Dequeue());
+            queue.Enqueue(4);
+            Console.WriteLine(queue.Dequeue());
+            Console.WriteLine(queue.Dequeue());
         }
     }
 
