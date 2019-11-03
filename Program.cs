@@ -6,6 +6,12 @@ namespace linkedlist
     {
         static void Main(string[] args)
         {
+            //ListStuff();
+            StackStuff();
+        }
+
+        static void ListStuff()
+        {
             var head = new Node<int>(1);
             head.Next = new Node<int>(2);
             head.Next.Next = new Node<int>(3);
@@ -32,6 +38,18 @@ namespace linkedlist
             list.Head.PrintList();
             list.Remove(0);
             list.Head.PrintList();
+        }
+
+        static void StackStuff()
+        {
+            var stack = new Stack<int>();
+            stack.Push(3);
+            stack.Push(2);
+            stack.Push(1);
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
         }
     }
 
