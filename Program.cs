@@ -8,7 +8,8 @@ namespace linkedlist
         {
             //ListStuff();
             //StackStuff();
-            QueueStuff();
+            //QueueStuff();
+            DoublyLinkedListStuff();
         }
 
         static void ListStuff()
@@ -65,6 +66,17 @@ namespace linkedlist
             queue.Enqueue(4);
             Console.WriteLine(queue.Dequeue());
             Console.WriteLine(queue.Dequeue());
+        }
+
+        static void DoublyLinkedListStuff()
+        {
+            var doubleList = new DoublyLinkedList<int>();
+            doubleList.Append(2);
+            doubleList.Append(3);
+            doubleList.Append(4);
+            doubleList.Prepend(1);
+
+            doubleList.PrintList();
         }
     }
 
